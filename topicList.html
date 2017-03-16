@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>专题列表</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="stylesheet/less" href="less/base.less">
+    <link rel="stylesheet/less" href="less/topicList.less"/>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <script src="lib/less/less.js"></script>
+    <script src="lib/template/template-native-min.js"></script>
+
+</head>
+
+<script type="text/topicModel" id="topicModel">
+
+    <% for(var i=0; i<arr.length ;i++) { %>
+        <div class="box">
+            <img src="<%=arr[i].img%>" alt=""/>
+            <div class="content_title"><%=arr[i].title%></div>
+        </div>
+    <% } %>
+
+</script>
+
+<body>
+    <!--顶部通栏-->
+    <header id="title">
+        <a href="#" class="icon-menu">
+            <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </button>
+        </a>
+        <!-- 标题内容 -->
+        <h3>专题列表</h3>
+    </header>
+    <!--/顶部通栏-->
+
+    <!--主题内容部分-->
+    <section id="bodys">
+        <div>
+
+            <!--<div class="box">-->
+                <!--<img src="http://ofv795nmp.bkt.clouddn.com/topics0.jpg" alt=""/>-->
+                <!--<div class="content_title">2016年七月新番</div>-->
+            <!--</div>-->
+
+        </div>
+    </section>
+    <!--主题内容部分-->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="js/topicList.js"></script>
+</body>
+</html>

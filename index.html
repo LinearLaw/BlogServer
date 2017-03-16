@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>红旅动漫</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="less/base.less">
+    <link rel="stylesheet/less" href="less/index.less">
+    <script src="lib/less/less.js"></script>
+    <script src="lib/template/template-native-min.js"></script>
+
+</head>
+    <!--轮播图模板-->
+    <script type="text/temCarousel" id="carouTem">
+
+        <% for(var i=0;i<list.length ;i++) { %>
+            <div class="item">
+                <img src="<%=list[i].img%>" alt=""class="car-img">
+            </div>
+        <% } %>
+
+    </script>
+    <!--<script type="text/carPoint">-->
+        <!--<% for(var s=0; s<poi.length ;s++) { %>-->
+            <!--<li data-target="#carousel-example-generic" data-slide-to="<%=i%>"></li>-->
+        <!--<% } %>-->
+    <!--</script>-->
+
+    <!--标签页模板-->
+    <script type="text/temTabs" id="tabTem-content">
+        <% for(var j=0;j<datas.length ;j++) { %>
+            <div>
+                <div class="tabImgBox">
+                    <img src="<%=datas[j].img%>" alt="" class="tabImgs"/>
+                    <div class="img_update_content">
+                        <span><%=datas[j].update%></span>
+                    </div>
+                </div>
+                <div class="tab-title"><%=datas[j].name%></div>
+            </div>
+        <% } %>
+    </script>
+
+<body>
+
+    <section id="rightSec" class="p-right">
+        <!--顶部通栏-->
+        <header id="header">
+            <a href="#" class="icon-menu" >
+                <button type="button" class="btn btn-default" aria-label="Left Align" id="menuJump">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                </button>
+            </a>
+            <!-- 标题内容 -->
+            <h3>红旅动漫</h3>
+            <!-- 菜单按钮 -->
+            <a href="#" class="icon-sear">
+                <button type="button" class="btn btn-default" aria-label="Left Align">
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+            </a>
+        </header>
+        <!--/顶部通栏-->
+
+        <!--轮播图区域-->
+        <section id="carousel">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" id="car-img">
+                    <!--这里的img标签用模板进行动态加入-->
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        <!--/轮播图区域-->
+
+        <!--主要内容区域-->
+        <section id="main_content">
+            <div>
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" id="homeSend">新增连载</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" id="profileSend">新增完结</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab" id="messagesSend">推荐连载</a></li>
+                    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab" id="settingsSend">推荐完结</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content" id="tabX">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                        <!--标签页的内容都用ajax获取-->
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">2</div>
+                    <div role="tabpanel" class="tab-pane" id="messages">3</div>
+                    <div role="tabpanel" class="tab-pane" id="settings">4</div>
+                </div>
+
+            </div>
+        </section>
+        <!--/主要内容区域-->
+
+        <!--遮罩层-->
+        <div id="shadeBlack"></div>
+        <!--/遮罩层-->
+    </section>
+
+
+    <!--侧边栏-->
+    <section id="shade" class="p-left">
+
+        <div>
+            <div>连载动漫</div>
+            <div>专题列表</div>
+            <div>关于</div>
+        </div>
+    </section>
+    <!--/侧边栏-->
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>
