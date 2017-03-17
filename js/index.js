@@ -27,7 +27,7 @@ $(function () {
     })
     //3、封装发送请求函数
     function ajaxTab(s,tabName){
-        console.log(s);
+        //console.log(s);
         $.ajax({
             url:'http://czdm.ittun.com/api/gethometab/'+s,
             type:'GET',
