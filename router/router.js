@@ -1,5 +1,5 @@
 
-
+const blogController = require("../controller/blog-controller.js")
 /**
  * @desc blog-service 
  */
@@ -7,14 +7,7 @@
 
 
 //blog-service
-exports.reportBlog = (req,res)=>{
-
-}
-
-exports.getBlogList = (req,res)=>{
-
-}
-
-exports.getBlogDetail = (req,res)=>{
-
-}
+exports.reportBlog = blogController.reportBlog;
+exports.getBlogList = blogController.getBlogList;
+exports.getBlogDetail = blogController.getBlogDetail;
+exports.deleteBlog = blogController.deleteBlog;

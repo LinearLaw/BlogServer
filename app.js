@@ -14,8 +14,10 @@ const color = require('colors-cli');
 global.CONFIG = require("./config/config.js");
 const ROUTER = require("./router/router.js");
 
-
-
+app.post("/reportBlog",ROUTER.reportBlog);
+app.get("/getBlogList",ROUTER.getBlogList);
+app.get("/getBlogDetail",ROUTER.getBlogDetail);
+app.get("/deleteBlog",ROUTER.deleteBlog);
 
 
 app.use(express.static("./public"));
@@ -27,5 +29,5 @@ app.listen(CONFIG.port,()=>{
         warn('Warning');
         notice('Notice');
      */
-    console.log(color.green("服务已就绪，端口号3456"));
+    console.log(color.green("服务已就绪，端口号"+CONFIG.port));
 })
