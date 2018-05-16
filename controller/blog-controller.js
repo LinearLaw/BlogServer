@@ -66,7 +66,7 @@ exports.getBlogList = (req,res)=>{
     /**
      * params : userId
      */
-    Blog.find({"blogAuthorId":req.query.blogAuthorId}).skip(pageNum).limit(pageSize).exec((err,result)=>{
+    Blog.find({"blogAuthorId":req.query.blogAuthorId}).skip((pageNum-1)*pageSize).limit(pageSize).exec((err,result)=>{
         if(!result||result.length<=0){
             res.send({
                 status:3,
