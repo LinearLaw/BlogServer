@@ -61,10 +61,19 @@ exports.getBlogList = (req,res)=>{
         });
         return;
     }
+    let pageSize = parseInt(req.query.pageSize)||10;
+    let pageNum = parseInt(req.query.pageNumber)||1;
     /**
      * params : userId
      */
-    Blog.find({"blogAuthorId":req.query.blogAuthorId},(err,result)=>{
+    Blog.find({"blogAuthorId":req.query.blogAuthorId}).skip(pageNum).limit(pageSize).exec((err,result)=>{
+        if(!result||result.length<=0){
+            res.send({
+                status:3,
+                content:"no data of blog list"
+            });
+            return;
+        }
         //make response faster, do map for avoid send detail content
         var resArr = [];
         result.map(function(item,index){
@@ -80,6 +89,8 @@ exports.getBlogList = (req,res)=>{
         res.send({
             status:1,
             content:"success",
+            pageNum:pageNum,
+            count:resArr.length,
             data:resArr
         })
     })
