@@ -14,20 +14,20 @@ const color = require('colors-cli');
 global.CONFIG = require("./config/config.js");
 const ROUTER = require("./router/router.js");
 
-app.post("/reportBlog",ROUTER.reportBlog);
-app.get("/getBlogList",ROUTER.getBlogList);
-app.get("/getBlogDetail",ROUTER.getBlogDetail);
-app.get("/deleteBlog",ROUTER.deleteBlog);
+app.post("/reportBlog", ROUTER.reportBlog);
+app.get("/getBlogList", ROUTER.getBlogList);
+app.get("/getBlogDetail", ROUTER.getBlogDetail);
+app.get("/deleteBlog", ROUTER.deleteBlog);
 
 
 app.use(express.static("./public"));
 
-app.listen(CONFIG.port,()=>{
+app.listen(CONFIG.port, () => {
     /**
      *  green('all right'); ——>正常运行
      *  error('Error!');
         warn('Warning');
         notice('Notice');
      */
-    console.log(color.green("服务已就绪，端口号"+CONFIG.port));
+    console.log(color.green("服务已就绪，端口号" + CONFIG.port));
 })
