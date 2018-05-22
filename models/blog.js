@@ -1,3 +1,6 @@
+/**
+ * @desc 博客的Schema
+ */
 const mongoose = require("mongoose");
 const db = require("./db.js");
 
