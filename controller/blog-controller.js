@@ -82,7 +82,7 @@ exports.getBlogList = (req, res) => {
             resArr.push({
                 blogId: item.blogId, //博客id
                 blogAuthorId: item.blogAuthorId, //作者的userId
-                blogTitle: item.blogTitle, //博文标题
+                blogTitle: item.blogTitle,  //博文标题
                 blogShortContent: item.blogShortContent, //博文略缩内容
                 createTime: item.createTime, //创建时间
                 updateTime: item.updateTime //更新时间
