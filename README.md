@@ -13,23 +13,32 @@
 
 ##  status
 
-*   0       There is no such data in database.
-*   1       Success.
-*   2       A field is required but missing in request.
-*   3       User no auth , request forbidden.
-*   4       Backup status , not used for now.
+*   0       
+        There is no such data in database.
+*   1       
+        Success.
+*   2       
+        A field is required but missing in request.
+*   3       
+        User no auth , request forbidden.
+*   4       
+        Backup status , not used for now.
 
 #   BLOG
 
 ##  Blog GET
 
-*   /getBlogList            Get blog list data , content will show no more than 30 words
-*   /getBlogDetail          Get blog detail content.
-*   /deleteBlog             Delete blog , need author.
+*   /getBlogList            
+        Get blog list data , content will show no more than 30 words.
+*   /getBlogDetail          
+        Get blog detail content.
+*   /deleteBlog             
+        Delete blog , need author.
 
 ##  Blog POST
 
-*   /reportBlog             Report blog.
+*   /reportBlog             
+        Report blog.
 
 #   COMMENT
 
