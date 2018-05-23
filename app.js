@@ -22,6 +22,7 @@ app.get("/deleteBlog", ROUTER.deleteBlog);
 
 app.use(express.static("./public"));
 
+
 app.listen(CONFIG.port, () => {
     /**
      *  green('all right'); ——>正常运行
