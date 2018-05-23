@@ -18,7 +18,7 @@ exports.reportBlog = (req, res) => {
         }
         if (!fields.blogContent) {
             res.send({
-                status: 3,
+                status: 2,
                 content: "blog content should not be empty"
             })
             return;
@@ -71,7 +71,7 @@ exports.getBlogList = (req, res) => {
     }).skip((pageNum - 1) * pageSize).limit(pageSize).exec((err, result) => {
         if (!result || result.length <= 0) {
             res.send({
-                status: 3,
+                status: 0,
                 content: "no data of blog list"
             });
             return;
@@ -116,11 +116,18 @@ exports.getBlogDetail = (req, res) => {
     Blog.find({
         "blogId": req.query.blogId
     }, (err, result) => {
-        res.send({
-            status: 1,
-            content: "success",
-            data: result[0]
-        })
+        if(result&&result.length>0){
+            res.send({
+                status: 1,
+                content: "success",
+                data: result[0]
+            })
+        }else{
+            res.send({
+                status:0,
+                content:"No such blog"
+            })
+        }
     })
 }
 
