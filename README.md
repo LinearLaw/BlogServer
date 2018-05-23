@@ -14,26 +14,26 @@
 ##  status
 
 *   0       
-        There is no such data in database.
+           There is no such data in database.
 *   1       
-        Success.
+           Success.
 *   2       
-        A field is required but missing in request.
+           A field is required but missing in request.
 *   3       
-        User no auth , request forbidden.
+           User no auth , request forbidden.
 *   4       
-        Backup status , not used for now.
+           Backup status , not used for now.
 
 #   BLOG
 
 ##  Blog GET
 
 *   /getBlogList            
-        Get blog list data , content will show no more than 30 words.
+           Get blog list data , content will show no more than 30 words.
 *   /getBlogDetail          
-        Get blog detail content.
+           Get blog detail content.
 *   /deleteBlog             
-        Delete blog , need author.
+           Delete blog , need author.
 
 ##  Blog POST
 
