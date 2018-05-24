@@ -125,7 +125,7 @@ exports.deleteComment = (req,res)=>{
 
 exports.getCommentList = (req,res)=>{
     console.log(color.green("getCommentList收到请求"));
-    
+    console.log(req.query);
 }
 
 exports.reportCommentForComment = (req,res)=>{
