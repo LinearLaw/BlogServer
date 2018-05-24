@@ -14,13 +14,18 @@ const color = require('colors-cli');
 global.CONFIG = require("./config/config.js");
 const ROUTER = require("./router/router.js");
 
+app.use(express.static("./public"));
+
+//Blog service
 app.post("/reportBlog", ROUTER.reportBlog);
 app.get("/getBlogList", ROUTER.getBlogList);
 app.get("/getBlogDetail", ROUTER.getBlogDetail);
 app.get("/deleteBlog", ROUTER.deleteBlog);
 
-
-app.use(express.static("./public"));
+//Comment service
+app.post("/reportComment", ROUTER.reportComment);
+app.post("/deleteComment", ROUTER.deleteComment);
+app.get("/getCommentList", ROUTER.getCommentList);
 
 
 app.listen(CONFIG.port, () => {
