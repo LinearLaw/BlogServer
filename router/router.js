@@ -13,6 +13,7 @@ exports.getBlogList = blogController.getBlogList;
 exports.getBlogDetail = blogController.getBlogDetail;
 exports.deleteBlog = blogController.deleteBlog;
 
+//comment-service
 exports.reportComment = commentController.reportComment;
 exports.deleteComment = commentController.deleteComment;
 exports.getCommentList = commentController.getCommentList;

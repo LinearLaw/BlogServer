@@ -12,7 +12,8 @@ const commentSchema = new mongoose.Schema({
     replyType:  {   type:String},   //blog or comment
     replyId:    {   type:String},   //blogId or commentId
     replyName:  {   type:String},   //if replyType==comment it need
-    replyContent:[{
+
+    replyContent:[{                    //comment content
         commentId:  {   type:String},
         blogId:     {   type:String},
 

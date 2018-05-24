@@ -5,6 +5,21 @@ const formidable = require("formidable");
 
 exports.reportComment = (req,res)=>{
     console.log(color.green("reportComment收到请求"));
+    /*
+     *  commentId:  CONFIG.idCreate.appleSignal(),
+     *  
+     *  blogId:     fields.blogId,      //Required
+     *  replyType:  "blog",             //default blog , blog or comment
+     *  replyId:    fields.replyId,     //default blogId , blogId or commentId
+     *  replyName:  fields.replyName,   //
+  
+     *  userId:         fields.userId,      //Required
+     *  userName:       fields.userName,    //Required
+     *  commentContent: fields.commentContent,  //Required
+  
+     *  updateTime: new Date().getTime(),
+     *  createTime: new Date().getTime(),
+     */
     let form = new formidable.IncomingForm();
     form.parse(req,(err,fields,files)=>{
         if(!fields.blogId){
@@ -41,7 +56,7 @@ exports.reportComment = (req,res)=>{
         let commentObj = {
             commentId:  CONFIG.idCreate.appleSignal(),
             blogId:     fields.blogId,      //Required
-            replyType:  fields.replyType,   //default blog , blog or comment
+            replyType:  "blog",   //default blog , blog or comment
             replyId:    fields.replyId,     //default blogId , blogId or commentId
             replyName:  fields.replyName,   //if replyType==comment it Required
 
@@ -111,4 +126,24 @@ exports.deleteComment = (req,res)=>{
 exports.getCommentList = (req,res)=>{
     console.log(color.green("getCommentList收到请求"));
     
+}
+
+exports.reportCommentForComment = (req,res)=>{
+    /**
+     *  blogId:      {   type:String}      //Required
+     *  firstLvCmtId:  {   type:String},   //Required first level commentId  → commentId
+     *
+     *  commentId:   //create when save data
+     *  replyType:   "comment",
+     *  replyId:     {   type:String},   //Required  second level commentId  → replyId
+     *  replyName:   {   type:String},   //Required  →
+     * 
+     *  userId:         {type:String},  //Required
+     *  userName:       {type:String},  //Required
+     *  commentContent: {type:String},  //Required 
+
+     *  updateTime: {type:Number},
+     *  createTime: {type:Number}
+     * 
+     */
 }
