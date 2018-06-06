@@ -79,6 +79,10 @@ exports.reportComment = (req,res)=>{
 }
 
 exports.deleteComment = (req,res)=>{
+    /**
+     * commentId
+     * userId
+     */
     console.log(color.green("deleteComment收到请求"));
     let form = new formidable.IncomingForm();
     form.parse(req,(err,fields,files)=>{
@@ -126,8 +130,17 @@ exports.deleteComment = (req,res)=>{
 exports.getCommentList = (req,res)=>{
     console.log(color.green("getCommentList收到请求"));
     console.log(req.query);
+    /**
+     * userId
+     * blogId
+     * pageNum
+     * pageSize
+     */
 }
 
+/**
+ * @desc 对一级评论进行评论
+ */
 exports.reportCommentForComment = (req,res)=>{
     /**
      *  blogId:      {   type:String}      //Required
