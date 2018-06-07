@@ -129,19 +129,43 @@ exports.deleteComment = (req,res)=>{
 
 exports.getCommentList = (req,res)=>{
     console.log(color.green("getCommentList收到请求"));
-    console.log(req.query);
     /**
      * userId
      * blogId
      * pageNum
      * pageSize
      */
+    if(!query.blogId){
+        res.send({
+            status:2,
+            content:"blog id should not be empty"
+        })
+        return;
+    }
+    if(!query.userId){
+        res.send({
+            status:2,
+            content:"user id should not be empty"
+        })
+        return;
+    }
+    let pageNum = query.pageNum || 1;
+    let pageSize = query.pageSize || 10;
+    Comment.find({
+        blogId:query.blogId
+    }).skip((pageNum - 1) * pageSize).limit(pageSize).exec(function(err,result){
+        res.send({
+            status:1,
+            content:"success",
+            data:result
+        })
+    })
 }
 
 /**
  * @desc 对一级评论进行评论
  */
-exports.reportCommentForComment = (req,res)=>{
+exports.reportCmtForCmt = (req,res)=>{
     /**
      *  blogId:      {   type:String}      //Required
      *  firstLvCmtId:  {   type:String},   //Required first level commentId  → commentId
