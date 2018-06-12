@@ -64,7 +64,9 @@ exports.getBlogList = (req, res) => {
     let pageSize = parseInt(req.query.pageSize) || 10;
     let pageNum = parseInt(req.query.pageNumber) || 1;
     /**
-     * params : userId
+     * blogAuthorId : userId
+     * pageNum
+     * pageSize
      */
     Blog.find({
         "blogAuthorId": req.query.blogAuthorId
@@ -112,6 +114,7 @@ exports.getBlogDetail = (req, res) => {
     }
     /**
      * params : userId
+     *          blogId
      */
     Blog.find({
         "blogId": req.query.blogId
@@ -145,7 +148,10 @@ exports.deleteBlog = (req, res) => {
     }
     /**
      * params : userId
+     *          blogId
+     *          cmd —— required , for identify user whether have authorization
      */
+
     Blog.remove({
         "blogId": req.query.blogId
     }, (err, result) => {
