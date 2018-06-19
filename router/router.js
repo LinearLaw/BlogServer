@@ -1,6 +1,11 @@
 
-const blogController = require("../controller/blog-controller.js")
-const commentController = require("../controller/comment-controller.js")
+const blogController = require("../controller/blog-controller.js");
+const commentController = require("../controller/comment-controller.js");
+
+const express = require("express");
+const router = express.Router();
+
+
 /**
  * @desc blog-service 
  */
@@ -8,12 +13,16 @@ const commentController = require("../controller/comment-controller.js")
 
 
 //blog-service
-exports.reportBlog = blogController.reportBlog;
-exports.getBlogList = blogController.getBlogList;
-exports.getBlogDetail = blogController.getBlogDetail;
-exports.deleteBlog = blogController.deleteBlog;
+router.post("/reportBlog", blogController.reportBlog);
+router.get("/getBlogList", blogController.getBlogList);
+router.get("/getBlogDetail", blogController.getBlogDetail);
+router.get("/deleteBlog", blogController.deleteBlog);
 
-//comment-service
-exports.reportComment = commentController.reportComment;
-exports.deleteComment = commentController.deleteComment;
-exports.getCommentList = commentController.getCommentList;
+
+//Comment service
+router.post("/reportComment", commentController.reportComment);
+router.post("/deleteComment", commentController.deleteComment);
+router.get("/getCommentList", commentController.getCommentList);
+
+
+module.exports = router;

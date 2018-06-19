@@ -16,17 +16,8 @@ const ROUTER = require("./router/router.js");
 
 app.use(express.static("./public"));
 
-//Blog service
-app.post("/reportBlog", ROUTER.reportBlog);
-app.get("/getBlogList", ROUTER.getBlogList);
-app.get("/getBlogDetail", ROUTER.getBlogDetail);
-app.get("/deleteBlog", ROUTER.deleteBlog);
-
-//Comment service
-app.post("/reportComment", ROUTER.reportComment);
-app.post("/deleteComment", ROUTER.deleteComment);
-app.get("/getCommentList", ROUTER.getCommentList);
-
+//挂载路由
+app.use("/",ROUTER);
 
 app.listen(CONFIG.port, () => {
     /**
