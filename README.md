@@ -34,4 +34,10 @@
 #   COMMENT
 
 ##  Comment GET
+
+*   /getCommentList     ——————> Get comment list .
+
 ##  Comment POST
+
+*   /reportComment      ——————> Report comment.
+*   /deleteComment      ——————> Delete this comment , need author or blog author.
