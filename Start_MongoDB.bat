@@ -1,2 +1,2 @@
 md Database
-mongod --dbpath ./Database
+cmd /k "mongod --dbpath ./Database"
