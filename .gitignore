@@ -1,2 +1,4 @@
 node_modules
 Database/*
+
+package-lock.json
