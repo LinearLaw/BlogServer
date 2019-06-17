@@ -7,6 +7,27 @@ const express = require("express");
 const app = express();
 
 /**
+ * @desc 日志，log4js
+ */
+const log4js = require("log4js");
+log4js.configure({
+    appenders: [
+      { type: 'console' }, //控制台输出
+      {
+        type: 'file', //文件输出
+        filename: 'logs/access.log', 
+        maxLogSize: 1024,
+        backups:3,
+        category: 'normal' 
+      }
+    ],
+    replaceConsole: true
+});
+const logger = log4js.getLogger('normal');
+logger.setLevel('INFO');
+
+
+/**
  * @desc color用于打印带颜色的console提示信息
  */
 const color = require('colors-cli');
@@ -15,6 +36,8 @@ global.CONFIG = require("./config/config.js");
 const ROUTER = require("./router/router.js");
 
 app.use(express.static("./public"));
+
+app.use(log4js.connectLogger(logger, {level:log4js.levels.INFO}));
 
 //挂载路由
 app.use("/",ROUTER);

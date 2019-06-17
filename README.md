@@ -1,5 +1,16 @@
 #   INTRODUCE
 
+(Project not complete)   
+
+- dependencies
+  - main: express
+  - log: log4js
+  - database frame: mongoose
+  - unique id: node-uuid
+
+- database
+  - mongodb
+
 #   REGULAR
 ##  response
 
