@@ -31,7 +31,7 @@ exports.reportBlog = (req, res) => {
         var shortContent = innerText;
         //fields为post body的内容
         let reqObj = {
-            blogId: CONFIG.idCreate.appleSignal(), //博客id
+            blogId: TOOLS.idCreate.appleSignal(), //博客id
             blogAuthorId: "admin", //作者的userId
             blogTitle: fields.blogTitle, //博文标题
             blogContent: fields.blogContent, //博文内容

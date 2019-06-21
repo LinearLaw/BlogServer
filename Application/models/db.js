@@ -5,7 +5,7 @@
 const mongoose = require("mongoose");
 const color = require("colors-cli");
 
-mongoose.connect(CONFIG.dbUrl,CONFIG.dbOptions);
+mongoose.connect(CONFIG.DB.URL,CONFIG.DB.OPTIONS);
 
 const db = mongoose.connection;
 

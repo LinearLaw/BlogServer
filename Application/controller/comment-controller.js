@@ -6,7 +6,7 @@ const formidable = require("formidable");
 exports.reportComment = (req,res)=>{
     console.log(color.green("reportComment收到请求"));
     /*
-     *  commentId:  CONFIG.idCreate.appleSignal(),
+     *  commentId:  TOOLS.idCreate.appleSignal(),
      *  
      *  blogId:     fields.blogId,      //Required
      *  replyType:  "blog",             //default blog , blog or comment
@@ -54,7 +54,7 @@ exports.reportComment = (req,res)=>{
         }
 
         let commentObj = {
-            commentId:  CONFIG.idCreate.appleSignal(),
+            commentId:  TOOLS.idCreate.appleSignal(),
             blogId:     fields.blogId,      //Required
             replyType:  "blog",   //default blog , blog or comment
             replyId:    fields.replyId,     //default blogId , blogId or commentId

@@ -1,4 +1,4 @@
 node_modules
-Database/*
-
+DB/Database/*
+.vscode
 package-lock.json
