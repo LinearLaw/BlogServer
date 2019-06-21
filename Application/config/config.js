@@ -1,4 +1,4 @@
-const uuid = require("node-uuid");
+const uuid = require("uuid");
 
 /**
  * [description] uuid生成

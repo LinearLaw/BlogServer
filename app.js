@@ -15,7 +15,7 @@ log4js.configure({
       { type: 'console' }, //控制台输出
       {
         type: 'file', //文件输出
-        filename: 'logs/access.log', 
+        filename: 'Application/logs/access.log', 
         maxLogSize: 1024,
         backups:3,
         category: 'normal' 
@@ -32,10 +32,10 @@ logger.setLevel('INFO');
  */
 const color = require('colors-cli');
 
-global.CONFIG = require("./config/config.js");
-const ROUTER = require("./router/router.js");
+global.CONFIG = require("./Application/config/config.js");
+const ROUTER = require("./Application/router/router.js");
 
-app.use(express.static("./public"));
+app.use(express.static("./Application/public"));
 
 app.use(log4js.connectLogger(logger, {level:log4js.levels.INFO}));
 
