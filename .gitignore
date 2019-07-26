@@ -4,3 +4,5 @@ DB/Database/*
 .next
 Application/logs/*
 package-lock.json
+
+yarn.lock
